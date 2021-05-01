@@ -93,7 +93,7 @@
 </head>
 <body>
 <div class="login-form">
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form action="<?php echo base_url('administrator/dashboard')?>" method="post">
 
         <h2 class="text-center">Login</h2>   
         <div class="form-group">
