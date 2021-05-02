@@ -13,13 +13,15 @@
 </head>
 <body>
 <div class="login-form">
-
-    <form action="<?php echo base_url('administrator/dashboard')?>" method="post">
+    
+    <form action="<?php echo base_url('login_controller')?>" method="post">
         <h2 class="text-center">Selamat Datang di Aplikasi Carikost</h2>   
 		<center><h5>Silahkan login untuk melanjutkan</h5></center>
 
+        <?php echo $this->session->flashdata('pesan') ?>
+
         <div class="form-group">
-        	<input type="text" class="form-control" name="username" placeholder="Username" required="required">
+        	<input type="text" class="form-control" name="nama" placeholder="Username" required="required">
         </div>
 		<div class="form-group">
             <input type="password" class="form-control" name="password" placeholder="Password" required="required">
