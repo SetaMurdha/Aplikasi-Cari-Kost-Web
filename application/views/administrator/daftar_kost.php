@@ -77,20 +77,26 @@
                             <th>No</th>
                             <th>Nama Kost</th>
                             <th>Sewa</th>
-                            <th>Kota</th>
+                            <th>Alamat</th>
+                            <th>Pemilik</th>
+                            <th>telepon</th>
                             <th colspan="3">Aksi</th>
                         </tr>
-
+                            <?php 
+                            $no = 1;
+                            foreach ($data as $dt) : ?>
                         <tr>
-                            <td>1</td>
-                            <td>Anggrek Kost</td>
-                            <td>Rp. 2.000.000/bulan</td>
-                            <td>Malang</td>
+                            <td><?php echo $no++; ?></td>
+                            <td><?php echo $dt['nmkost']?></td>
+                            <td><?php echo $dt['harga']?></td>
+                            <td><?php echo $dt['alamat']?></td>
+                            <td><?php echo $dt['pemilik']?></td>
+                            <td><?php echo $dt['telepon']?></td>
                             <td width="20px"><div class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></div></td>
                             <td width="20px"><div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></div></td>
                             <td width="20px"><div class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></div></td>
                         </tr>
-
+                                <?php endforeach; ?>
                     </table>
                 </div>
             </div>
