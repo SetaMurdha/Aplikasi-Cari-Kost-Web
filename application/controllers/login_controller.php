@@ -22,8 +22,8 @@ class Login_controller extends CI_Controller
 		// die;
 		if($user){
 
-			// if(password_verify($password, $user['password'])){ <-- untuk password yg sudah dienskripsi
-				if($password == $user['password']){
+			if(password_verify($password, $user['password'])){
+				// if($password == $user['password']){  <-- untuk password yg tidak dienskripsi
 				$data = [
 					'ttl' => $user['ttl'],
 					'email'=> $user['email'],
