@@ -14,17 +14,18 @@
 <body>
 <div class="login-form">
     
-    <form action="<?php echo base_url('login_controller')?>" method="post">
+    <form action="<?php echo base_url('login_controller/index')?>" method="post">
         <h2 class="text-center">Selamat Datang di Aplikasi Carikost</h2>   
 		<center><h5>Silahkan login untuk melanjutkan</h5></center>
 
         <?php echo $this->session->flashdata('pesan') ?>
-
         <div class="form-group">
-        	<input type="text" class="form-control" name="nama" placeholder="Username" required="required">
+        	<input type="text" class="form-control" name="email" placeholder="Email" >
+            <?= form_error("email","<h6 class='text-danger'>","</h6>")?>
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+            <input type="password" class="form-control" name="password" placeholder="Password" >
+            <?= form_error("password","<h6 class='text-danger'>","</h6>")?>
         </div>        
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>

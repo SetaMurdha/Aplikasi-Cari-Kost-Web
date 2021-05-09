@@ -1,26 +1,6 @@
-<footer class="footer">
-                <div class="container-fluid">
-                    <nav>
-                        <ul class="footer-menu">
-                            <li>
-                                <a href="<?php echo base_url('administrator/dashboard') ?>">
-                                    Home
-                                </a>
-                            </li>
-                        </ul>
-                        <p class="copyright text-center">
-                            ©
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script>
-                            
-                        </p>
-                    </nav>
-                </div>
-            </footer>
+
         </div>
-    </div>
-    
+    </div>    
 </body>
 <!--   Core JS Files   -->
 <script src="<?php echo base_url() ?>assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
