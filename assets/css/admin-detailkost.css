@@ -1,0 +1,32 @@
+.fullScreen{
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top : 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.fullScreen #map{
+    margin-top: 40px;
+    width: 80%; height:550px;
+    border-radius:20px;
+}
+
+.fullScreen i{
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    top : 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.hide{
+    display: none;
+}
+
+table tr td:first-child{
+    width : 150px;
+}

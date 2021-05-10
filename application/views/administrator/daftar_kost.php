@@ -38,10 +38,12 @@
                         <td><?php echo $dt['nmkost'] ?></td>
                         <td><?php echo $dt['alamat'] ?></td>
                         <td width="20px">
-                            <div class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></div>
+                            <a class="nav-link" href=<?=base_url().'administrator/daftar_kost/detail/'.$dt["id"]?>>
+                                <div class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></div></a>
                         </td>
                         <td width="20px">
-                            <div class="btn btn-sm btn-info"><i class="fa fa-edit"></i></div>
+                            <a class="nav-link" href=<?=base_url().'administrator/daftar_kost/update_kost/'.$dt["id"]?>>
+                                <div class="btn btn-sm btn-info"><i class="fa fa-edit"></i></div></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
