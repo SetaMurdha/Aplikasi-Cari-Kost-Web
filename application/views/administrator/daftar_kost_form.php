@@ -22,7 +22,7 @@
             <!-- End Navbar -->
             <div class="content">
                 <div class="container-fluid">
-                        <form method="POST" action="">
+                        <?=form_open_multipart("")?>
                             <?=$this->session->flashdata('pesan')?>
                             <div class="form-group">
                                 <label>Nama Kost</label>
@@ -80,8 +80,9 @@
                                 <input type="text" name="latitude" placeholder="Masukkan Latitude" class="form-control">
                                 <i>*Contoh penulisan longitude / latitude : 112.896857</i>
                             </div>
+                            <input type="file" name="foto">
                             <button type="submit" class="btn btn-primary">Simpan</button>
-                        </form>
+                        <?=form_close()?>
 
                 </div>
             </div>

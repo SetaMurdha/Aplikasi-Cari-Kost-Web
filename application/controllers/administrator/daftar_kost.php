@@ -43,13 +43,27 @@ class Daftar_kost extends CI_Controller{
 		$nm_kost = $this->input->post("nm_kost");
 		$nm_pemilik = $this->input->post("nm_pemilik");
 		$alamat = $this->input->post("alamat");
-		$telepon= $this->input->post("tlepon");
+		$telepon= $this->input->post("telepon");
 		$kota_kab = $this->input->post("id_kota_kab");
 		$jenis = $this->input->post("jenis");
 		$pembayaran =  $this->input->post("pembayaran");
 		$biaya = $this->input->post("biaya");
 		$lat = $this->input->post("latitude");
 		$long = $this->input->post("longitude");
+		$foto = $_FILES["foto"];
+		$nm_foto = '';
+
+		if($foto!=null){
+			$config["upload_path"]="./assets/img/gambar_kost/";
+			$config["allowed_types"]="jpg|png|jpeg";
+			$config["max_size"]=2000;
+			$config["encrypt_name"]=true;
+			$this->load->library('upload',$config);
+			if($this->upload->do_upload('foto')){
+				$nm_foto=$this->upload->data('file_name');
+			}
+		}
+		
 
 		$data = [
 			"nmkost"=>$nm_kost,
@@ -61,7 +75,8 @@ class Daftar_kost extends CI_Controller{
 			"pembayaran"=>$pembayaran,
 			"harga"=>$biaya,
 			"latitude"=>$lat,
-			"longitude"=>$long
+			"longitude"=>$long,
+			"foto"=>$nm_foto
 		];
 
 		$this->main_model->input_kost($data);
@@ -115,13 +130,26 @@ class Daftar_kost extends CI_Controller{
 		$nm_kost = $this->input->post("nm_kost");
 		$nm_pemilik = $this->input->post("nm_pemilik");
 		$alamat = $this->input->post("alamat");
-		$telepon= $this->input->post("tlepon");
+		$telepon= $this->input->post("telepon");
 		$kota_kab = $this->input->post("id_kota_kab");
 		$jenis = $this->input->post("jenis");
 		$pembayaran =  $this->input->post("pembayaran");
 		$biaya = $this->input->post("biaya");
 		$lat = $this->input->post("latitude");
 		$long = $this->input->post("longitude");
+		$foto =$_FILES["foto"];
+		$nm_foto=$this->input->post('nm_foto');
+
+		if($foto!=null){
+			$config["upload_path"]="./assets/img/gambar_kost/";
+			$config["allowed_types"]="jpg|png|jpeg";
+			$config["max_size"]=2000;
+			$config["encrypt_name"]=true;
+			$this->load->library('upload',$config);
+			if($this->upload->do_upload('foto')){
+				$nm_foto=$this->upload->data('file_name');
+			}
+		}	
 
 		$data = [
 			"nmkost"=>$nm_kost,
@@ -133,8 +161,10 @@ class Daftar_kost extends CI_Controller{
 			"pembayaran"=>$pembayaran,
 			"harga"=>$biaya,
 			"latitude"=>$lat,
-			"longitude"=>$long
+			"longitude"=>$long,
+			"foto"=>$nm_foto
 		];
+
 
 		$this->main_model->update_kost($data,["id"=>$idkost]);
 		$this->session->set_flashdata('pesan',"<div class='alert alert-success alert-dismissible' role='alert'>

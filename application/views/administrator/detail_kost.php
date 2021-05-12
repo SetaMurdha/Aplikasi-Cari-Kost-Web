@@ -24,7 +24,13 @@
         <div class="container-fluid">
         <h3 class="mb-3"><?=$kost["nmkost"]?></h3>
         <div class="row">
-        <img src=<?=base_url()."assets/img/surabaya.jpg"?> height="300" class="ml-3 mb-3 mr-5" alt="">
+        <img 
+        <?php if($kost["foto"]==null){?>
+        src="<?=base_url().'assets/img/Home.png'?>"
+        <?php }else{?>
+            src="<?=base_url().'assets/img/gambar_kost/'.$kost['foto']?>"
+            <?php }?>
+            height="300" class="ml-3 mb-3 mr-5" alt="">
             <table border="0" style="width: 60%">
                     <tr>
                         <th>Pemilik Kost </th>
@@ -40,7 +46,7 @@
                     </tr>
                     <tr>
                         <th>Harga </th>
-                        <td> : Rp <?=$kost["harga"]?></td>
+                        <td> : Rp <?=number_format($kost["harga"],0,',','.')?></td>
                     </tr>
                     <tr>
                         <th>Nomer Telepon </th>

@@ -22,7 +22,7 @@
             <!-- End Navbar -->
             <div class="content">
                 <div class="container-fluid">
-                        <form method="POST" action="<?=base_url().'administrator/daftar_kost/update_kost/'.$kost['id']?>">
+                        <?=form_open_multipart('administrator/daftar_kost/update_kost/'.$kost['id'])?>
                             <?=$this->session->flashdata('pesan')?>
                             <input type="hidden" name="idkost" value="<?php $kost['id']?>">
                             <div class="form-group">
@@ -99,8 +99,10 @@
                                 <input type="text" name="latitude" placeholder="Masukkan Latitude" class="form-control" value="<?=$kost['latitude']?>">
                                 <i>*Contoh penulisan longitude / latitude : 112.896857</i>
                             </div>
+                            <input type="hidden" name="nm_foto" value="<?=$kost['foto']?>">
+                            <input type="file" name="foto">
                             <button type="submit" class="btn btn-primary">Simpan</button>
-                        </form>
+                        <?=form_close()?>
 
                 </div>
             </div>

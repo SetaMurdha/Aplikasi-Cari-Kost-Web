@@ -27,15 +27,15 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="<?php echo base_url('administrator/profil') ?>">
-                            <i class="nc-icon nc-circle-09"></i>
+                        <a class="nav-link" href="<?php echo base_url('administrator/daftar_user') ?>">
+                        <i class="fa fa-users mr-2"></i>
                             <p>Profil Pengguna</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="<?php echo base_url('administrator/maps') ?>">
-                            <i class="nc-icon nc-pin-3"></i>
-                            <p>Lokasi Kost</p>
+                        <a class="nav-link" href="<?php echo base_url('administrator/profil') ?>">
+                        <i class="fa fa-user mr-2"></i>
+                            <p>Profil</p>
                         </a>
                     </li>
                 </ul>
