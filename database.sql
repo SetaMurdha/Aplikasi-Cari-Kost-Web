@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 -- Membuang data untuk tabel carikost.admin: ~2 rows (lebih kurang)
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
 REPLACE INTO `admin` (`id`, `nama`, `ttl`, `jenis_kelamin`, `email`, `password`, `foto`) VALUES
-	(4, 'Zeke Yeager', '1985-05-01', 'Laki-laki', 'admin1@gmail.com', '$2y$10$/jgC0Qpf2X.0bJX.kd60LuScbUkm.RhVOkLVY.6F55pjt86oetwoa', 'ba12216b983abe6f87026e9f4d646b56.png'),
+	(4, 'Parama Admaja', '1985-05-01', 'Laki-laki', 'admin1@gmail.com', '$2y$10$/jgC0Qpf2X.0bJX.kd60LuScbUkm.RhVOkLVY.6F55pjt86oetwoa', 'ba12216b983abe6f87026e9f4d646b56.png'),
 	(5, 'Mauren Helvia Devi', '2000-05-07', 'Perempuan', 'admin2@gmail.com', '$2y$10$/jgC0Qpf2X.0bJX.kd60LuScbUkm.RhVOkLVY.6F55pjt86oetwoa', NULL),
 	(6, 'Fany Parama', '2000-06-07', 'Laki-laki', 'admin3@gmail.com', '$2y$10$t70Pge791dCT.OBOicVde.FW1qNtpgI1pLkRfLqNgwuvgFlJBq6KG', NULL);
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `data_kost` (
 -- Membuang data untuk tabel carikost.data_kost: ~99 rows (lebih kurang)
 /*!40000 ALTER TABLE `data_kost` DISABLE KEYS */;
 REPLACE INTO `data_kost` (`id`, `nmkost`, `pemilik`, `id_kota_kab`, `alamat`, `telepon`, `harga`, `jenis`, `pembayaran`, `longitude`, `latitude`, `foto`) VALUES
-	(1, 'Kost Pink', 'Ibu Rofiah', 1, 'Jl. Sunan Ampel I No.29, Dinoyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65149', NULL, 12000000, 'Putri', 'Tahunan', 112.6066666, -7.9495459, NULL),
+	(1, 'Kost Pink', 'Ibu Rofiah', 1, 'Jl. Sunan Ampel I No.29, Dinoyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65149', '6283177836675', 12000000, 'Putri', 'Tahunan', 112.6066666, -7.9495459, NULL),
 	(2, 'Kos Putra Bu Tajab', 'Ibu Tajab', 1, 'Jl. Sunan Ampel 2 No.2, Dinoyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65149', '6282330099843', 8000000, 'Putra', 'Tahunan', 112.6047745, -7.9494915, NULL),
 	(3, 'Kost Bu Fikri', 'Ibu Fikri', 1, 'Jl. Sunan Ampel 2 No.4, RT.09/RW.02, Dinoyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144', '6282244408050', 6750000, 'Putri', 'Tahunan', 112.6047363, -7.9493618, NULL),
 	(4, 'Kost Putri Kece', 'Ibu Sadiyah', 1, 'Jl. Sunan Ampel I No.18A, Dinoyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144', '6281333273838', 11500000, 'Putri', 'Tahunan', 112.6051102, -7.9497824, NULL),
@@ -159,6 +159,24 @@ REPLACE INTO `data_kost` (`id`, `nmkost`, `pemilik`, `id_kota_kab`, `alamat`, `t
 	(99, 'Kost Putri BCT Blok 9 Kav 64', 'Bapak Hidayat', 1, 'Perumahan, Jl. Bukit Cemara Tujuh, Dusun Rambaan, Tlogomas, Kec. Lowokwaru, Kota Malang, Jawa Timur 65151', '6281334790461', 6750000, 'Putri', 'Tahunan', 112.5927887, -7.9233737, NULL),
 	(100, 'Kos Putra BCT A10', 'Bapak Hidayat', 1, 'Perumahan Bukit Cemara Tujuh Blok A No, 10, Mulyoagung, Kec. Dau, Malang, Jawa Timur 65151', '6281252151636', 675000, 'Putra', 'Bulanan', 112.5918427, -7.9223514, NULL);
 /*!40000 ALTER TABLE `data_kost` ENABLE KEYS */;
+
+-- membuang struktur untuk table carikost.favorit
+CREATE TABLE IF NOT EXISTS `favorit` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL DEFAULT '0',
+  `id_kost` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `FK__user` (`id_user`),
+  KEY `FK__data_kost` (`id_kost`),
+  CONSTRAINT `FK__data_kost` FOREIGN KEY (`id_kost`) REFERENCES `data_kost` (`id`),
+  CONSTRAINT `FK__user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+-- Membuang data untuk tabel carikost.favorit: ~0 rows (lebih kurang)
+/*!40000 ALTER TABLE `favorit` DISABLE KEYS */;
+REPLACE INTO `favorit` (`id`, `id_user`, `id_kost`) VALUES
+	(4, 1, 33);
+/*!40000 ALTER TABLE `favorit` ENABLE KEYS */;
 
 -- membuang struktur untuk table carikost.kota_kab
 CREATE TABLE IF NOT EXISTS `kota_kab` (

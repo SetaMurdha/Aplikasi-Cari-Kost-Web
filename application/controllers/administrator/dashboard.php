@@ -12,4 +12,9 @@ class Dashboard extends CI_Controller{
 			redirect("login_controller/index");
 		}
 	}
+	public function data_kost($key=null){
+		$this->load->model('main_model');
+		$data = $this->main_model->get_kost($key);
+		echo json_encode($data);
+	}
 }

@@ -1,0 +1,70 @@
+.content .container {
+    width : 100%;
+    height : 500px;
+}
+
+.filter .btn{
+    border-radius : 20px;
+}
+.filter{
+    margin-bottom : 30px;
+}
+.container .item{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: white;
+    height: 200px;
+    border-radius : 10px;
+    box-shadow : 2px 2px 5px rgb(162, 162, 162);
+    overflow: hidden;
+}
+.container a{
+    color: unset;
+}
+.container a:hover{
+    text-decoration: none;
+    font-style: unset;
+}
+.container .item .image{
+    width:300px;
+    height:200px;
+}
+.container .item .contents{
+    height : 200px;
+    width: 400px;
+    padding : 10px;
+}
+.container .item .contents h1{
+    font-size: 30px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 800;
+}
+.container .item .contents .btn{
+    border-radius: 20px;
+    font-size: 12px;
+}
+.container .item .contents h3{
+    font-size: 20px;
+    margin-top: 10px;
+}
+.container .item .contents p{
+    color : grey;
+    width: 400px;
+    height: 200px;
+    overflow: hidden;
+}
+.container .item .harga{
+    position: relative;
+    height: 200px;
+    width : 50%;
+    margin-left : 100px;
+}
+.container .item .harga h3{
+    position: absolute;
+    top : 10px;
+    right : 10px;
+    font-weight: 800;
+    color: rgb(12, 148, 69);
+    font-size: 20px;
+}

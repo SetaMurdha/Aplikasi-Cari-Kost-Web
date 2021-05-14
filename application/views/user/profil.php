@@ -2,7 +2,7 @@
     <link rel="stylesheet" href=<?=base_url().'assets/css/admin-detailkost.css'?>>
     <nav class="navbar navbar-expand-lg " color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#"> Profil Admin </a>
+                    <a class="navbar-brand" href="#"> Profil User </a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -23,23 +23,31 @@
     <div class="content">
         <div class="container-fluid">
         <div class="row">
-        <img src=<?=base_url()."assets/img/profil.png"?> height="200" class="ml-3 mb-3 mr-5" alt="">
+        <img 
+        <?php if($user['foto']==null){?>
+        src="<?=base_url().'assets/img/profil.png'?>"
+        <?php }else{?> 
+            src="<?=base_url().'assets/img/'.$user['foto']?>"
+        <?php } ?>  height="200" class="ml-3 mb-3 mr-5" alt="">
             <table border="0" style="width: 60%">
                     <tr>
                         <th>Nama </th>
-                        <td> : <?=$admin["nama"]?></td>
+                        <td> : <?=$user["nama"]?></td>
                     </tr>
                     <tr>
                         <th>Tanggal Lahir  </th>
-                        <td> : <?=$admin["ttl"]?></td>
+                        <td> : <?=$user["ttl"]?></td>
                     </tr>
                     <tr>
                         <th>Jenis Kelamin </th>
-                        <td> :  <?=$admin["jenis_kelamin"]?></td>
+                        <td> :  <?=$user["jenis_kelamin"]?></td>
                     </tr>
                     <tr>
                         <th>Email </th>
-                        <td> : <?=$admin["email"]?></td>
+                        <td> : <?=$user["email"]?></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn btn-info mt-3 btn-sm">Update</button></td>
                     </tr>
             </table></div>
             <div class="fullScreen hide">

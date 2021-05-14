@@ -15,25 +15,20 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('administrator/dashboard') ?>">
+                        <a class="nav-link" href="<?php echo base_url('user/dashboard') ?>">
                             <i class="fa fa-th-large mr-2"></i>
                             <p>Dashboard</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="<?php echo base_url('administrator/daftar_kost') ?>">
-                            <i class="fa fa-list mr-2"></i>
-                            <p>Daftar Kost</p>
+                        <a class="nav-link" href="<?php echo base_url('user/favorit') ?>">
+                            <i class="fa fa-heart mr-2"></i>
+                            <p>Favorit</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="<?php echo base_url('administrator/daftar_user') ?>">
-                        <i class="fa fa-users mr-2"></i>
-                            <p>Daftar Pengguna</p>
-                        </a>
-                    </li>
                     <li>
-                        <a class="nav-link" href="<?php echo base_url('administrator/profil') ?>">
+                        <a class="nav-link" href="<?php echo base_url('user/profil') ?>">
                         <i class="fa fa-user mr-2"></i>
                             <p>Profil</p>
                         </a>
