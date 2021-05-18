@@ -4,7 +4,7 @@ class Auth_model extends CI_Model{
         $this->db->insert($table,$data);
     }
     public function dataMap(){
-        return $this->db->get("data_kost", 20)->result_array();
+        return $this->db->get("data_kost")->result_array();
     }
 }
 ?>
