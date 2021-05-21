@@ -30,15 +30,28 @@
     <body>
         <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
         <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
-
-        <div id="map" style="height:600px"></div>
+        <div class="wrap mx-auto mt-4 mb-3" style="width:80%;height:100px;display:flex;flex-direction:row;justify-content:space-evenly;flex-wrap:wrap;margin-bottom:100px">
+            <div class="column" >
+            <i class="fa fa-home text-primary ml-4" style="font-size:90px;margin:auto"></i>
+                    <h1 class="mx-auto h3" style="font-weight:600;">Kost : <?= count($kost)?></h1>
+            </div>
+            <div class="column">
+            <i class="fa fa-map-marker text-primary ml-4" style="font-size:90px;margin:auto"></i>
+                    <h1 class="mx-auto h3" style="font-weight:600;">Kota : <?= count($kota)?></h1>
+            </div>
+            <div class="column">
+            <i class="fa fa-users text-primary ml-4" style="font-size:90px;margin:auto"></i>
+                    <h1 class="mx-auto h3" style="font-weight:600;">Users : <?= count($user)?></h1>
+            </div>
+        </div>
+        <div id="map" class="mx-auto " style="height:500px;width:80%;border-radius:15px;margin-top:80px"></div>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
         <script>
             L.mapbox.accessToken = 'pk.eyJ1Ijoia3VybmlhMzEzIiwiYSI6ImNrbjc4dWg0djBsZWYybnFmb3R3eXNqcG8ifQ.8bBe577KnxhA934TRoXebQ';
             var map = L.mapbox.map('map')
-                .setView([-7.9495459, 112.6066666], 10)
+                .setView([-7.9495459, 112.6066666], 15)
                 .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'))
                 .addControl(L.mapbox.geocoderControl('mapbox.places', {
                     autocomplete: true

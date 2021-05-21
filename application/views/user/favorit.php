@@ -29,7 +29,7 @@
                     <a href="<?=base_url().'user/dashboard/detail/'.$x['id_kost']?>">
                         <div class="item mt-3">
                             <div class="image">
-                                <img src="<?=base_url().'/assets/img/gambar_kost/'.$x["foto"]?>" height="200" alt="">
+                                <img src="<?=base_url().'/assets/img/gambar_kost/'.$x["foto"]?>" width="300" alt="">
                             </div>
                             <div class="contents ml-4">
                                 <h1><?=$x["nmkost"]?></h1>

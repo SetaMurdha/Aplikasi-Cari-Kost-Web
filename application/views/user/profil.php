@@ -27,7 +27,7 @@
         <?php if($user['foto']==null){?>
         src="<?=base_url().'assets/img/profil.png'?>"
         <?php }else{?> 
-            src="<?=base_url().'assets/img/'.$user['foto']?>"
+            src="<?=base_url().'assets/img/user/'.$user['foto']?>"
         <?php } ?>  height="200" class="ml-3 mb-3 mr-5" alt="">
             <table border="0" style="width: 60%">
                     <tr>
@@ -47,7 +47,7 @@
                         <td> : <?=$user["email"]?></td>
                     </tr>
                     <tr>
-                        <td><button class="btn btn-info mt-3 btn-sm">Update</button></td>
+                        <td><a href="<?=base_url().'user/profil/update_profil'?>"><button class="btn btn-info mt-3 btn-sm">Edit</button></a></td>
                     </tr>
             </table></div>
             <div class="fullScreen hide">

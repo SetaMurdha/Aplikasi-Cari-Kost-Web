@@ -143,7 +143,7 @@ class Daftar_kost extends CI_Controller{
 		if($foto!=null){
 			$config["upload_path"]="./assets/img/gambar_kost/";
 			$config["allowed_types"]="jpg|png|jpeg";
-			$config["max_size"]=2000;
+			$config["max_size"]=500;
 			$config["encrypt_name"]=true;
 			$this->load->library('upload',$config);
 			if($this->upload->do_upload('foto')){

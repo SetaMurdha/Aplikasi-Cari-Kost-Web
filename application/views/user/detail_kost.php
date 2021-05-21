@@ -30,7 +30,7 @@
         <?php }else{?>
             src="<?=base_url().'assets/img/gambar_kost/'.$kost['foto']?>"
             <?php }?>
-            height="300" class="ml-3 mb-3 mr-5" alt="">
+            width="300" class="ml-3 mb-3 mr-5" alt="">
             <table border="0" style="width: 60%">
                     <tr>
                         <th>Pemilik Kost </th>

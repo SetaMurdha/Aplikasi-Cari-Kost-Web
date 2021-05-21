@@ -23,7 +23,11 @@
     <div class="content">
         <div class="container-fluid">
         <div class="row">
-        <img src=<?=base_url()."assets/img/profil.png"?> height="200" class="ml-3 mb-3 mr-5" alt="">
+        <?php if($admin['foto']!=null){?>
+            <img src=<?=base_url()."assets/img/admin/".$admin['foto']?> height="200" class="ml-3 mb-3 mr-5" alt="">
+        <?php }else{ ?>
+            <img src=<?=base_url()."assets/img/profil.png"?> height="200" class="ml-3 mb-3 mr-5" alt="">  
+        <?php }?>
             <table border="0" style="width: 60%">
                     <tr>
                         <th>Nama </th>
@@ -40,6 +44,9 @@
                     <tr>
                         <th>Email </th>
                         <td> : <?=$admin["email"]?></td>
+                    </tr>
+                    <tr>
+                        <td><a href="<?=base_url().'administrator/profil/update_profil'?>"><button class="btn btn-primary mt-3">Edit</button></a></td>
                     </tr>
             </table></div>
             <div class="fullScreen hide">

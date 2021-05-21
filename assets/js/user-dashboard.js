@@ -25,8 +25,8 @@ $(document).ready(()=>{
     let generateContainer = (id,nmkost,jenis,pembayaran,nm_kota_kab,harga,foto)=>{$(".container").append(`
     <a href="dashboard/detail/${id}">
     <div class="item mt-3">
-        <div class="image">
-            <img src="http://localhost/Aplikasi-Cari-Kost-Web/assets/img/gambar_kost/${foto}" height="200" alt="">
+        <div class="image" >
+            <img src="http://localhost/Aplikasi-Cari-Kost-Web/assets/img/gambar_kost/${foto}" width="300" alt="">
         </div>
         <div class="contents ml-4">
             <h1>${nmkost}</h1>

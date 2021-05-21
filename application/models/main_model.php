@@ -16,6 +16,14 @@ class Main_model extends CI_Model{
         $this->db->where($where);
         $this->db->update("data_kost",$data);
     }
+    public function update_admin($where,$data){
+        $this->db->where($where);
+        $this->db->update('admin',$data);
+    }
+    public function update_user($where,$data){
+        $this->db->where($where);
+        $this->db->update('user',$data);
+    }
     public function get_users(){
         return $this->db->get('user')->result_array();
     }
