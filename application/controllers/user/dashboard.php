@@ -2,11 +2,12 @@
 
 class Dashboard extends CI_Controller{
 	public function index(){
+		$data['_peta']  = $this->auth_model->dataMap();
 		$id=$this->session->userdata('iduser');
 		if($id!=null){
 		$this->load->view('template/header');
 		$this->load->view('user/sidebar');
-		$this->load->view('user/dashboard');
+		$this->load->view('user/dashboard',$data);
 		$this->load->view('template/footer');
 		}else{
 			redirect("login_controller/index");
