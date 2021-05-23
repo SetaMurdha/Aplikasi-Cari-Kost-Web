@@ -27,7 +27,7 @@
     font-style: unset;
 }
 .container .item .image{
-    width:300px;
+    width:400px;
     height:200px;
 }
 .container .item .contents{
@@ -57,13 +57,13 @@
 .container .item .harga{
     position: relative;
     height: 200px;
-    width : 50%;
-    margin-left : 100px;
+    width : 70%;
+    margin-left : 50px;
 }
 .container .item .harga h3{
     position: absolute;
     top : 10px;
-    right : 10px;
+    right : 30px;
     font-weight: 800;
     color: rgb(12, 148, 69);
     font-size: 20px;

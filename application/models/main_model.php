@@ -37,15 +37,16 @@ class Main_model extends CI_Model{
         if($key==null){
             $this->db->select("*");
             $this->db->from("kota_kab");
-            $this->db->join("data_kost","data_kost.id_kota_kab=kota_kab.id");
+            $this->db->join("data_kost","data_kost.id_kota_kab=kota_kab.id ");
             return $this->db->get()->result_array();
         }else{
-            $this->db->like('alamat',$key);
-            $this->db->or_like('nmkost',$key);
-            $this->db->select("*");
-            $this->db->from("kota_kab");
-            $this->db->join("data_kost","data_kost.id_kota_kab=kota_kab.id");
-            return $this->db->get()->result_array();
+                $this->db->like('nmkost',$key);
+                $this->db->or_like('alamat',$key);
+                $this->db->select("*");
+                $this->db->from("kota_kab");
+                $this->db->join("data_kost","data_kost.id_kota_kab=kota_kab.id");
+                return $this->db->get()->result_array();
+            
         }
     }
     public function get_favorit_where($iduser){

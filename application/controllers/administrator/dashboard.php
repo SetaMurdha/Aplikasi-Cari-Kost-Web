@@ -18,6 +18,16 @@ class Dashboard extends CI_Controller{
 	}
 	public function data_kost($key=null){
 		$this->load->model('main_model');
+		$parameter = explode('%20',$key);
+		$key ='';
+		foreach($parameter as $x){
+			$arr[]=$x;
+			$arr[]=' ';
+		}
+		array_pop($arr);
+		foreach ($arr as $x) {
+			$key.=$x;
+		}
 		$data = $this->main_model->get_kost($key);
 		echo json_encode($data);
 	}
